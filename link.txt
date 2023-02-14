@@ -1,0 +1,6 @@
+GitHub repository hasil fork: https://github.com/mfth12/a433-microservices
+Docker Hub: https://hub.docker.com/r/mfth12/item-app
+
+
+Github @mfth12
+Dicoding @mfth12
