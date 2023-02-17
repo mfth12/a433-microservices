@@ -1,3 +1,33 @@
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=ab66a9c6f7b3
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] db version v3.6.23
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] modules: none
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] build environment:
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten]     distarch: x86_64
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I STORAGE  [initandlisten] 
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.780+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+a433-microservices-item-db-1  | 2023-02-17T16:47:22.781+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=5413M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.487+0000 I STORAGE  [initandlisten] WiredTiger message [1676652443:487318][1:0x7f6f71a9aa40], txn-recover: Main recovery loop: starting at 1/24832
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.579+0000 I STORAGE  [initandlisten] WiredTiger message [1676652443:579628][1:0x7f6f71a9aa40], txn-recover: Recovering log 1 through 2
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.634+0000 I STORAGE  [initandlisten] WiredTiger message [1676652443:634965][1:0x7f6f71a9aa40], txn-recover: Recovering log 2 through 2
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.679+0000 I STORAGE  [initandlisten] WiredTiger message [1676652443:679769][1:0x7f6f71a9aa40], txn-recover: Set global recovery timestamp: 0
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.716+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.716+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.716+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.716+0000 I CONTROL  [initandlisten] 
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.720+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.721+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.721+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
+a433-microservices-item-db-1  | 2023-02-17T16:47:23.721+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+a433-microservices-item-db-1  | 2023-02-17T16:47:24.866+0000 I NETWORK  [listener] connection accepted from 172.22.0.3:35384 #1 (1 connection now open)
+a433-microservices-item-db-1  | 2023-02-17T16:47:24.870+0000 I NETWORK  [conn1] received client metadata from 172.22.0.3:35384 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.19.0-32-generic" }, platform: "Node.js v14.21.2, LE, mongodb-core: 2.1.20" }
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | > docker-software-delivery@1.0.0 start /app
 a433-microservices-item-app-1  | > node ./bin/www
@@ -7,7 +37,7 @@ a433-microservices-item-app-1  | /app/node_modules/mongodb/lib/mongo_client.js:4
 a433-microservices-item-app-1  |           throw err
 a433-microservices-item-app-1  |           ^
 a433-microservices-item-app-1  | 
-a433-microservices-item-app-1  | AssertionError [ERR_ASSERTION]: null == Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.25.0.3:27017
+a433-microservices-item-app-1  | AssertionError [ERR_ASSERTION]: null == Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.22.0.2:27017
 a433-microservices-item-app-1  |     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16) {
 a433-microservices-item-app-1  |   name: 'MongoError'
 a433-microservices-item-app-1  | }]
@@ -23,7 +53,7 @@ a433-microservices-item-app-1  |     at processTicksAndRejections (internal/proc
 a433-microservices-item-app-1  |   generatedMessage: true,
 a433-microservices-item-app-1  |   code: 'ERR_ASSERTION',
 a433-microservices-item-app-1  |   actual: null,
-a433-microservices-item-app-1  |   expected: Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.25.0.3:27017
+a433-microservices-item-app-1  |   expected: Error [MongoError]: failed to connect to server [item-db:27017] on first connect [Error: connect ECONNREFUSED 172.22.0.2:27017
 a433-microservices-item-app-1  |       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16) {
 a433-microservices-item-app-1  |     name: 'MongoError'
 a433-microservices-item-app-1  |   }]
@@ -48,80 +78,21 @@ a433-microservices-item-app-1  | npm ERR! Failed at the docker-software-delivery
 a433-microservices-item-app-1  | npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | npm ERR! A complete log of this run can be found in:
-a433-microservices-item-app-1  | npm ERR!     /root/.npm/_logs/2023-02-14T13_51_57_975Z-debug.log
+a433-microservices-item-app-1  | npm ERR!     /root/.npm/_logs/2023-02-17T16_47_23_688Z-debug.log
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | > docker-software-delivery@1.0.0 start /app
 a433-microservices-item-app-1  | > node ./bin/www
 a433-microservices-item-app-1  | 
 a433-microservices-item-app-1  | NODE_ENV: production
 a433-microservices-item-app-1  | Connected to database
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=26d806385cde
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] db version v3.6.23
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] git version: d352e6a4764659e0d0350ce77279de3c1f243e5c
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] allocator: tcmalloc
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] modules: none
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] build environment:
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten]     distarch: x86_64
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten]     target_arch: x86_64
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.603+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true } }
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.604+0000 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.604+0000 I STORAGE  [initandlisten] 
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.604+0000 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.604+0000 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m141.232 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [36m304 [0m2.326 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m24.876 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m0.695 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m3.402 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m1.349 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m0.975 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m3.240 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m1.393 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m8.435 ms - 178[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m0.853 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m2.239 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m0.916 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m2.899 ms - 178[0m
-a433-microservices-item-app-1  | [0mGET /favicon.ico [33m404 [0m7.833 ms - 270[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m0.527 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m2.052 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m1.009 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m2.104 ms - 178[0m
-a433-microservices-item-app-1  | [0mGET /favicon.ico [33m404 [0m0.665 ms - 270[0m
-a433-microservices-item-app-1  | [0mGET / [32m200 [0m0.695 ms - 785[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m1.536 ms - 519[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m0.647 ms - 186999[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m2.423 ms - 178[0m
-a433-microservices-item-app-1  | [0mGET /favicon.ico [33m404 [0m1.195 ms - 270[0m
-a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m10.636 ms - 60[0m
-a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m2.083 ms - 59[0m
-a433-microservices-item-app-1  | [0mGET / [36m304 [0m0.796 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [36m304 [0m0.838 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [36m304 [0m0.670 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /api [32m200 [0m2.511 ms - 299[0m
-a433-microservices-item-app-1  | [0mGET / [36m304 [0m0.670 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [36m304 [0m0.411 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [36m304 [0m1.610 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /api [36m304 [0m2.785 ms - -[0m
-a433-microservices-item-app-1  | [0mGET / [36m304 [0m0.552 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [36m304 [0m0.369 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [36m304 [0m1.579 ms - -[0m
-a433-microservices-item-app-1  | [0mGET /api [36m304 [0m4.900 ms - -[0m
-a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.584 ms - 52[0m
-a433-microservices-item-db-1   | 2023-02-14T13:51:57.604+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=5414M,cache_overflow=(file_max=0M),session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.234+0000 I STORAGE  [initandlisten] WiredTiger message [1676382718:234884][1:0x7f4c7b1a8a40], txn-recover: Main recovery loop: starting at 1/24704
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.337+0000 I STORAGE  [initandlisten] WiredTiger message [1676382718:337144][1:0x7f4c7b1a8a40], txn-recover: Recovering log 1 through 2
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.393+0000 I STORAGE  [initandlisten] WiredTiger message [1676382718:393904][1:0x7f4c7b1a8a40], txn-recover: Recovering log 2 through 2
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.436+0000 I STORAGE  [initandlisten] WiredTiger message [1676382718:436845][1:0x7f4c7b1a8a40], txn-recover: Set global recovery timestamp: 0
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.456+0000 I CONTROL  [initandlisten] 
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.456+0000 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.456+0000 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.456+0000 I CONTROL  [initandlisten] 
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.462+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.463+0000 I NETWORK  [initandlisten] listening via socket bound to 0.0.0.0
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.463+0000 I NETWORK  [initandlisten] listening via socket bound to /tmp/mongodb-27017.sock
-a433-microservices-item-db-1   | 2023-02-14T13:51:58.463+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
-a433-microservices-item-db-1   | 2023-02-14T13:51:59.109+0000 I NETWORK  [listener] connection accepted from 172.25.0.2:46444 #1 (1 connection now open)
-a433-microservices-item-db-1   | 2023-02-14T13:51:59.117+0000 I NETWORK  [conn1] received client metadata from 172.25.0.2:46444 conn1: { driver: { name: "nodejs", version: "2.2.36" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "5.15.0-60-generic" }, platform: "Node.js v14.21.2, LE, mongodb-core: 2.1.20" }
+a433-microservices-item-app-1  | [0mGET / [32m200 [0m156.463 ms - 785[0m
+a433-microservices-item-app-1  | [0mGET /javascripts/dist/dist.min.js [32m200 [0m2.627 ms - 186999[0m
+a433-microservices-item-app-1  | [0mGET /stylesheets/style.css [32m200 [0m26.409 ms - 519[0m
+a433-microservices-item-app-1  | [0mGET /api [32m200 [0m12.002 ms - 219[0m
+a433-microservices-item-app-1  | [0mGET /favicon.ico [33m404 [0m9.604 ms - 270[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m11.523 ms - 51[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.628 ms - 52[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.758 ms - 62[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.672 ms - 64[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.638 ms - 54[0m
+a433-microservices-item-app-1  | [0mPOST /api [32m201 [0m1.866 ms - 52[0m

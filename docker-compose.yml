@@ -9,7 +9,7 @@ services:
     # memastikan item-db diluncurkan dahulu
     depends_on:
       item-db:
-        condition: service_completed_successfully
+        condition: service_started
     # auto restart policy
     restart: always
     # setting port mapping
