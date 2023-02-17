@@ -2,7 +2,21 @@
 version: "3.7"
 # inisiasi service
 services:
-  # perintah instalasi item-db
+  # perintah peluncuran item-app
+  item-app:
+    # image mengambil dari Docker Hub
+    image: mfth12/item-app:v1
+    # memastikan item-db diluncurkan dahulu
+    depends_on:
+      item-db:
+        condition: service_completed_successfully
+    # auto restart policy
+    restart: always
+    # setting port mapping
+    ports:
+      - 80:8080
+
+  # perintah peluncuran item-db
   item-db:
     # images menggunakan mongo-db versi 3
     image: mongo:3
@@ -12,19 +26,7 @@ services:
     volumes:
       - app-db:/data/db
 
-  # perintah instalasi item-app
-  item-app:
-    # image mengambil dari Docker Hub
-    image: mfth12/item-app:v1
-    # auto restart policy
-    restart: always
-    # setting port mapping
-    ports:
-      - 80:8080
-      
 # perintah membuat volumes
 volumes:
-  # volume untuk app-db
+  # volume app-db
   app-db:
-      
-      

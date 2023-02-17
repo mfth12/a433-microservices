@@ -1,8 +1,8 @@
 #!/bin/sh
 # membuat docker image dari dockerfile, dngn nama item-app dan tag v1
 docker build -t item-app:v1 .
-# melihat daftar image di lokal
-docker image ls
+# menampilkan daftar image yang ada di lokal
+docker images
 # mengubah nama image agar sesuai dengan format Docker Hub
 docker tag item-app:v1 mfth12/item-app:v1
 # login ke Docker Hub
