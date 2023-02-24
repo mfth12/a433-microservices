@@ -1,17 +1,22 @@
 version: 2.1
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  hadolint:
-    working_directory: ~/repo
+
+executors:
+  docker:
     docker:
-      - image: hadolint/hadolint:latest
+      - image: docker:docker:17.05.0-ce-git
+
+jobs:
+  lint-dockerfile:
+    executor: docker
     steps:
       - checkout
+      - setup_remote_docker
       - run:
-          name: Cek Dockerfile
-          command: docker run --rm -i hadolint/hadolint < Dockerfile
-
+          name: Run hadolint
+          command: docker run --rm --interactive hadolint/hadolint < Dockerfile
+          
   # proses testing aplikasi
   test-app:
     working_directory: ~/repo
@@ -30,7 +35,7 @@ jobs:
   build-app-karsajobs:
     working_directory: ~/repo
     docker:
-      - image: circleci/golang:1.15.8
+      - image: cimg/go:1.15.10
       - image: docker:17.05.0-ce-git
     steps:
       - checkout
@@ -47,6 +52,6 @@ jobs:
 workflows:
   ujian-pipeline:
     jobs:
-      - hadolint
+      - lint-dockerfile
       - test-app
       - build-app-karsajobs
