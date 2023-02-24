@@ -9,12 +9,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Check Dockerfile
-          command: hadolint `find . -type f -name Dockerfile | xargs readlink -f` &> report.json
-      - run:
-          name: Print Laporan
-          command: cat report.json
-          when: on_fail
+          name: Cek Dockerfile
+          command: docker run --rm -i hadolint/hadolint < Dockerfile
 
   # proses testing aplikasi
   test-app:
@@ -23,16 +19,9 @@ jobs:
       - image: cimg/go:1.15.10
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - go-mod-v4-{{ checksum "go.sum" }}
       - run:
           name: Install Dependensi
           command: go get ./...
-      - save_cache:
-          key: go-mod-v4-{{ checksum "go.sum" }}
-          paths:
-            - "/go/pkg/mod"
       - run:
           name: Menjalankan test
           command: go test -v -short --count=1 $(go list ./...)
@@ -46,16 +35,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - restore_cache:
-          keys:
-            - go-mod-v4-{{ checksum "go.sum" }}
       - run:
           name: Install Dependensi
           command: go mod download
-      - save_cache:
-          key: go-mod-v4-{{ checksum "go.sum" }}
-          paths:
-            - "/go/pkg/mod"
       - run:
           name: Run build and push image
           command: |
