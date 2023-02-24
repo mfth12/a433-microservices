@@ -22,7 +22,7 @@ jobs:
     working_directory: ~/repo
     # set image go-lang v1.15~
     docker:
-      - image: golang:1.15-alpine
+      - image: cimg/go:1.15.10
     # step2
     steps:
       - checkout
@@ -37,12 +37,12 @@ jobs:
     working_directory: ~/repo
     # set images
     docker:
-      - image: golang:1.15-alpine
+      - image: cimg/go:1.15.10
       - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
-      # build dan push image ke ghcr.io/mfth12
+      # build dan push image ke ghcr.io
       - run:
           name: Build and push image ke ghcr.io
           command: |
