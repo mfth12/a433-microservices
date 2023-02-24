@@ -15,7 +15,7 @@ jobs:
           name: Print Laporan
           command: cat report.json
           when: on_fail
-          
+
   # proses testing aplikasi
   test-app:
     working_directory: ~/repo
@@ -42,20 +42,22 @@ jobs:
     working_directory: ~/repo
     docker:
       - image: circleci/golang:1.15.8
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
+      - setup_remote_docker
       - restore_cache:
           keys:
             - go-mod-v4-{{ checksum "go.sum" }}
       - run:
-          name: Install Dependencies
+          name: Install Dependensi
           command: go mod download
       - save_cache:
           key: go-mod-v4-{{ checksum "go.sum" }}
           paths:
             - "/go/pkg/mod"
       - run:
-          name: Run tests
+          name: Run build and push image
           command: |
             ./build_push_image_karsajobs.sh
 
