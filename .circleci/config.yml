@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Menjalankan hadolint
           command: docker run --rm --interactive hadolint/hadolint < Dockerfile
-          
+
   # proses build aplikasi dan push docker image hasil build
   build-app-karsajobs-ui:
     working_directory: ~/repo
@@ -34,11 +34,13 @@ jobs:
       - run:
           name: Build and push image ke ghcr.io
           command: |
+            "npm run build"
             ./build_push_image_karsajobs_ui.sh
 
 # Workflows untuk mengatur jobs alur CI Pipeline
 workflows:
   pipeline-karsajobs-ui:
+    #alur jobs ci-workflow
     jobs:
       - lint-dockerfile
       - build-app-karsajobs-ui
