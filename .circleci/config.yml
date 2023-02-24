@@ -37,13 +37,13 @@ jobs:
           name: Install Dependensi
           command: go mod download
       - run:
-          name: Run build and push image
+          name: Run build and push image ke ghcr.io
           command: |
             ./build_push_image_karsajobs.sh
 
 # Workflows untuk mengatur alur CI Pipeline
 workflows:
-  ujian-pipeline:
+  pipeline-karsajobs:
     jobs:
       - lint-dockerfile
       - test-app
