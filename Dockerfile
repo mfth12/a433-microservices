@@ -7,7 +7,6 @@ ENV APP_PORT=8080
 COPY go.mod .
 COPY go.sum .
 RUN go mod download
-
 COPY . .
 RUN mkdir /build; \
     go build -o /build/ ./...

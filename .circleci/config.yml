@@ -1,49 +1,57 @@
 version: 2.1
-# Define a job to be invoked later in a workflow.
+# mendefinisikan jobs yang akan dipanggil nanti dalam workflows
 jobs:
   # proses linting dockerfile
   lint-dockerfile:
+    # set work-dir
     working_directory: ~/repo
+    # set docker image
     docker:
       - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
+      # menjalankan hadolint dengan docker
       - run:
-          name: Run hadolint
+          name: Menjalankan hadolint
           command: docker run --rm --interactive hadolint/hadolint < Dockerfile
           
   # proses testing aplikasi
   test-app:
+    # set work-dir
     working_directory: ~/repo
+    # set image go-lang v1.15~
     docker:
-      - image: cimg/go:1.15.10
+      - image: golang:1.15-alpine
+    # step2
     steps:
       - checkout
       - run:
+          # menjalankan test
           name: Menjalankan test
           command: go test -v -short --count=1 $(go list ./...)
 
   # proses build aplikasi dan push docker images
   build-app-karsajobs:
+    # set work-dir
     working_directory: ~/repo
+    # set images
     docker:
-      - image: cimg/go:1.15.10
-      - image: docker:17.05.0-ce-git
+      - image: golang:1.15-alpine
+      - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
+      # build dan push image ke ghcr.io/mfth12
       - run:
-          name: Install Dependensi
-          command: go mod download
-      - run:
-          name: Run build and push image ke ghcr.io
+          name: Build and push image ke ghcr.io
           command: |
             ./build_push_image_karsajobs.sh
 
 # Workflows untuk mengatur alur CI Pipeline
 workflows:
   pipeline-karsajobs:
+    #alur jobs ci-workflow
     jobs:
       - lint-dockerfile
       - test-app
