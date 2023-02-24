@@ -19,25 +19,15 @@ jobs:
   build-app-karsajobs-ui:
     working_directory: ~/repo
     docker:
-      - image: cimg/node:17.4.0
+      - image: cimg/node:14.21.3
       - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
 
-      # install dependensi karsajobs-ui
-      - run:
-          name: Install dependensi
-          command: "npm install"
-
-      # build karsajobs-ui
-      - run:
-          name: Install dependensi
-          command: "npm run build"
-
-      # deploy ke ghcr.io
       - run:
           name: Build and push image ke ghcr.io
+          # perintah build karsajobs-ui dan deploy ke ghcr.io
           command: |
             ./build_push_image_karsajobs_ui.sh
 
