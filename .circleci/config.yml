@@ -1,15 +1,11 @@
 version: 2.1
 # Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-
-executors:
-  docker:
-    docker:
-      - image: docker:docker:17.05.0-ce-git
-
 jobs:
+  # proses linting dockerfile
   lint-dockerfile:
-    executor: docker
+    working_directory: ~/repo
+    docker:
+      - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
@@ -24,9 +20,6 @@ jobs:
       - image: cimg/go:1.15.10
     steps:
       - checkout
-      - run:
-          name: Install Dependensi
-          command: go get ./...
       - run:
           name: Menjalankan test
           command: go test -v -short --count=1 $(go list ./...)
