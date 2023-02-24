@@ -1,0 +1,38 @@
+version: 2.1
+# Define a job to be invoked later in a workflow.
+jobs:
+  # proses linting dockerfile
+  lint-dockerfile:
+    working_directory: ~/repo
+    docker:
+      - image: docker:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Run hadolint
+          command: docker run --rm --interactive hadolint/hadolint < Dockerfile
+          
+  # proses build aplikasi dan push docker images
+  build-app-karsajobs-ui:
+    working_directory: ~/repo
+    docker:
+      - image: cimg/go:1.15.10
+      - image: docker:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install Dependensi
+          command: go mod download
+      - run:
+          name: Build and push image ke ghcr.io
+          command: |
+            ./build_push_image_karsajobs_ui.sh
+
+# Workflows untuk mengatur jobs alur CI Pipeline
+workflows:
+  pipeline-karsajobs-ui:
+    jobs:
+      - lint-dockerfile
+      - build-app-karsajobs-ui
