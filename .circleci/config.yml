@@ -4,27 +4,33 @@ jobs:
   # proses linting dockerfile
   lint-dockerfile:
     working_directory: ~/repo
+    # mengambil docker image versi stabil
     docker:
       - image: docker:stable
+    # langkah2 lint
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Run hadolint
+          name: Menjalankan hadolint
           command: docker run --rm --interactive hadolint/hadolint < Dockerfile
           
-  # proses build aplikasi dan push docker images
+  # proses build aplikasi dan push docker image hasil build
   build-app-karsajobs-ui:
     working_directory: ~/repo
     docker:
-      - image: cimg/go:1.15.10
+      - image: cimg/node:17.4.0
       - image: docker:stable
     steps:
       - checkout
       - setup_remote_docker
+
+      #install dependensi karsajobs-ui
       - run:
-          name: Install Dependensi
-          command: go mod download
+          name: Install dependensi
+          command: "npm install"
+
+      #build karsajobs-ui dan deploy ke ghcr.io
       - run:
           name: Build and push image ke ghcr.io
           command: |

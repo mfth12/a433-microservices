@@ -1,5 +1,5 @@
 # karsajobs-ui
-Frontend for [karsajobs](https://github.com/dicodingacademy/karsajobs)
+Frontend for [karsajobs](https://github.com/mfth12/a433-microservices/tree/karsajobs)
 
 ## Project setup
 ```
