@@ -25,16 +25,20 @@ jobs:
       - checkout
       - setup_remote_docker
 
-      #install dependensi karsajobs-ui
+      # install dependensi karsajobs-ui
       - run:
           name: Install dependensi
           command: "npm install"
 
-      #build karsajobs-ui dan deploy ke ghcr.io
+      # build karsajobs-ui
+      - run:
+          name: Install dependensi
+          command: "npm run build"
+
+      # deploy ke ghcr.io
       - run:
           name: Build and push image ke ghcr.io
           command: |
-            "npm run build"
             ./build_push_image_karsajobs_ui.sh
 
 # Workflows untuk mengatur jobs alur CI Pipeline
